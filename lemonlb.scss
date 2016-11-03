@@ -1,0 +1,74 @@
+/***** COLORS *****/
+$white: #fff;
+$maindark: #23282d;
+$maindarker: #1e2328;
+$maindarkest: #12171c;
+$mainmed: #53585d;
+$mainlight: #c3c8cd;
+$mainlighter: #d3d8dd;
+$mainlightest: #e3e8ed;
+/***** END COLORS *****/
+
+@mixin rgba-background($hexcolor, $opacity) {
+  background-color: $hexcolor;
+  background-color: rgba($hexcolor, $opacity); 
+}
+
+.lemonlightbox {
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+  &.visible {
+    visibility: visible;
+    @include rgba-background($maindark,0.8);
+  }
+  &.hidden {
+    visibility: hidden;
+  }
+}
+
+.lemonwrapper {
+  position: absolute;
+  display: inline-block;
+  text-align: center;
+  max-height: 80%;
+  top: 50%;
+  margin-top: -25%;
+  left: 50%;
+}
+
+img.lemonimg {
+  max-width: 1024px;
+  max-height: 1024px;
+}
+
+.lemon-x {
+  color: $white;
+  position: absolute;
+  bottom: -32px;
+  right: 0;
+  transition: color 0.2s;
+  cursor: pointer;
+  &:hover {
+    color: #0db;
+  }
+}
+
+.lemon-link {
+  color: $white;
+  position: absolute;
+  bottom: -32px;
+  right: 32px;
+  transition: color 0.2s;
+  cursor: pointer;
+  &:visited {
+    color: $white;
+  }
+  &:hover {
+    color: #0db;
+  }
+}
